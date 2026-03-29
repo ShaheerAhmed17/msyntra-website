@@ -1,6 +1,7 @@
 'use client'
 
 import { useEffect, useState } from "react"
+import { Variants } from "framer-motion";
 import Script from "next/script"
 import { Navbar } from "@/components/navbar"
 import { Footer } from "@/components/footer"
@@ -8,13 +9,13 @@ import { ContactForm } from "@/components/contact-form"
 import { Mail, Phone, ArrowRight, Clock, Zap, BarChart3, Code2 } from "lucide-react"
 import { motion } from "framer-motion"
 
-const fadeUp = {
+const fadeUp: Variants = {
   hidden: { opacity: 0, y: 24 },
-  show: (i = 0) => ({
+  show: {
     opacity: 1,
     y: 0,
-    transition: { duration: 0.6, delay: i * 0.1, ease: [0.23, 1, 0.32, 1] },
-  }),
+    transition: { duration: 0.6, ease: "easeInOut" },
+  },
 }
 
 const reasons = [
@@ -176,7 +177,6 @@ export default function ContactPage() {
                   initial="hidden"
                   whileInView="show"
                   viewport={{ once: true }}
-                  custom={i * 0.5}
                   className="group p-6 rounded-2xl border border-white/5 bg-[#111827]/30 hover:bg-[#111827]/60 hover:border-teal-500/20 transition-all duration-300"
                 >
                   <div className="h-10 w-10 rounded-xl bg-teal-500/10 border border-teal-500/20 flex items-center justify-center mb-5 group-hover:bg-teal-500/20 transition-colors">
@@ -204,8 +204,8 @@ export default function ContactPage() {
                   key={tab.key}
                   onClick={() => setActiveTab(tab.key as "calendly" | "form")}
                   className={`px-6 py-2.5 rounded-xl text-sm font-semibold transition-all duration-200 ${activeTab === tab.key
-                      ? "bg-teal-500 text-white shadow-lg shadow-teal-500/20"
-                      : "text-gray-400 hover:text-white"
+                    ? "bg-teal-500 text-white shadow-lg shadow-teal-500/20"
+                    : "text-gray-400 hover:text-white"
                     }`}
                 >
                   {tab.label}
@@ -219,7 +219,7 @@ export default function ContactPage() {
                 key="calendly"
                 initial={{ opacity: 0, y: 16 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.4, ease: [0.23, 1, 0.32, 1] }}
+                transition={{ duration: 0.4, ease: "easeInOut" }}
               >
                 <div className="mb-8">
                   <h2 className="text-2xl md:text-3xl font-bold text-white tracking-tight mb-2">Schedule a Free 30-min Strategy Call</h2>
@@ -241,7 +241,7 @@ export default function ContactPage() {
                 key="form"
                 initial={{ opacity: 0, y: 16 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.4, ease: [0.23, 1, 0.32, 1] }}
+                transition={{ duration: 0.4, ease: "easeInOut" }}
                 className="max-w-2xl"
               >
                 <div className="mb-8">

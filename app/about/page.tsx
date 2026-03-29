@@ -1,19 +1,20 @@
 "use client"
 
 import { Navbar } from "@/components/navbar"
+import { Variants } from "framer-motion";
 import { Footer } from "@/components/footer"
 import { CtaBlock } from "@/components/cta-block"
 import { motion } from "framer-motion"
 import { Target, Shield, Users, ArrowRight } from "lucide-react"
 import Link from "next/link"
 
-const fadeUp = {
+const fadeUp: Variants = {
   hidden: { opacity: 0, y: 24 },
-  show: (i = 0) => ({
+  show: {
     opacity: 1,
     y: 0,
-    transition: { duration: 0.6, delay: i * 0.1, ease: [0.23, 1, 0.32, 1] },
-  }),
+    transition: { duration: 0.6, ease: "easeInOut" },
+  },
 }
 
 const stats = [
@@ -115,7 +116,6 @@ export default function AboutPage() {
                   initial="hidden"
                   whileInView="show"
                   viewport={{ once: true }}
-                  custom={i * 0.5}
                   className="py-12 px-8 text-center"
                 >
                   <p className="text-4xl font-bold text-teal-500 mb-2">{stat.value}</p>
@@ -166,7 +166,6 @@ export default function AboutPage() {
                       initial="hidden"
                       whileInView="show"
                       viewport={{ once: true }}
-                      custom={i * 0.5}
                       className="relative pl-14"
                     >
                       <div className="absolute left-0 top-1 h-10 w-10 rounded-xl bg-teal-500/10 border border-teal-500/20 flex items-center justify-center">
@@ -206,7 +205,6 @@ export default function AboutPage() {
                   initial="hidden"
                   whileInView="show"
                   viewport={{ once: true }}
-                  custom={i * 0.5}
                   className="group p-8 rounded-2xl border border-white/5 bg-[#111827]/30 hover:bg-[#111827]/60 hover:border-teal-500/20 transition-all duration-300"
                 >
                   <div className="h-12 w-12 rounded-xl bg-teal-500/10 border border-teal-500/20 flex items-center justify-center mb-6 group-hover:bg-teal-500/20 transition-colors">

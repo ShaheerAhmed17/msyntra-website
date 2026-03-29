@@ -1,19 +1,20 @@
 "use client"
 
 import { Navbar } from "@/components/navbar"
+import { Variants } from "framer-motion";
 import { Footer } from "@/components/footer"
 import { CtaBlock } from "@/components/cta-block"
 import { CheckCircle2, Zap, Bot, Workflow, Cpu, X, ArrowRight } from "lucide-react"
 import { motion } from "framer-motion"
 import Link from "next/link"
 
-const fadeUp = {
+const fadeUp: Variants = {
   hidden: { opacity: 0, y: 24 },
-  show: (i = 0) => ({
+  show: {
     opacity: 1,
     y: 0,
-    transition: { duration: 0.6, delay: i * 0.1, ease: [0.23, 1, 0.32, 1] },
-  }),
+    transition: { duration: 0.6, ease: "easeInOut" },
+  },
 }
 
 const stats = [
@@ -159,7 +160,6 @@ export default function ServicesPage() {
                   initial="hidden"
                   whileInView="show"
                   viewport={{ once: true }}
-                  custom={i * 0.5}
                   className="py-10 px-6 text-center"
                 >
                   <p className="text-3xl md:text-4xl font-bold text-teal-500 mb-2">{stat.value}</p>

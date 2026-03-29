@@ -47,7 +47,7 @@ export function FeatureCard({ title, description, icon, image, delay = 0 }: Feat
       initial={{ opacity: 0, y: 30 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-50px" }}
-      transition={{ duration: 0.8, delay, ease: [0.23, 1, 0.32, 1] }}
+      transition={{ duration: 0.8, delay, ease: "easeInOut" }}
       style={{ 
         perspective: "1000px",
         rotateX: rotateX,

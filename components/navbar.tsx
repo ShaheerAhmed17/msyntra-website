@@ -9,7 +9,7 @@ export function Navbar() {
       <motion.header
         initial={{ y: -50, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
-        transition={{ duration: 0.6, ease: [0.23, 1, 0.32, 1] }}
+        transition={{ duration: 0.6, ease: "easeInOut" }}
         className="pointer-events-auto flex items-center h-12 max-w-2xl w-full border border-white/5 bg-black/60 backdrop-blur-2xl rounded-2xl px-6 shadow-xl"
       >
         <Link href="/" className="flex items-center space-x-2 mr-6 shrink-0 group">
