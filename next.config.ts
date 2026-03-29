@@ -12,9 +12,6 @@ const nextConfig: NextConfig = {
     turbopackFileSystemCacheForDev: false,
   },
   transpilePackages: ["lucide-react", "framer-motion"],
-  turbopack: {
-    root: "/home/jarvis/msyntra-website",
-  },
 };
 
 export default nextConfig;
